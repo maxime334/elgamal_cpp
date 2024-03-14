@@ -21,14 +21,9 @@ struct Elgamal {
 
   Elgamal() = delete;
 
-  // Generates both public and private key.
+  // Generates the keys.
   Elgamal(std::uint8_t bit);
 };
-
-/**
-  @brief Creates a byte array of the message.
-*/
-char *byte_array(std::string &message) noexcept;
 
 /**
   Simple representation of the Elgamal encryption for the user.

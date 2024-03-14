@@ -2,8 +2,6 @@
 #include "input.hpp"
 #include "modulo.hpp"
 
-char *byte_array(std::string &message) noexcept { return &message[0]; }
-
 void elgamal_demo() {
 
   int no_bits;
