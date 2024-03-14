@@ -163,34 +163,24 @@ std::uint32_t pollards_rho(std::uint32_t value) {
   return factor;
 }
 
-std::vector<std::uint32_t> find_prime_factors(std::uint32_t value) {
+std::set<std::uint32_t> find_prime_factors(std::uint32_t value) {
 
   // Begin w/ two factors for value.
   std::uint32_t p{0};
   std::uint32_t q{0};
-  std::vector<std::uint32_t> factors;
+  std::set<std::uint32_t> factors;
 
   if (is_prime(value))
     return {value}; // Input is already a prime.
 
-  /**
-    @brief Inserts only prime factor if not already found.
-  */
-  static const auto unique_insert =
-      [](std::uint32_t prime, std::vector<std::uint32_t> &factors) -> void {
-    if (std::find(factors.begin(), factors.end(), prime) == factors.end())
-      factors.push_back(prime); // Not found, can append to vector.
-    // Else, been found, no insert.
-  };
-
   // q factorized until it's a prime.
   do {
     p = pollards_rho(value);
-    unique_insert(p, factors);
+    factors.insert(p);
     q = value / p;
     value = q; // Next loop will find prime factor of q.
   } while (!is_prime(q));
-  unique_insert(q, factors);
+  factors.insert(q);
 
   return factors;
 }

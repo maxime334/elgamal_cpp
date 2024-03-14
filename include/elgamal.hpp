@@ -17,6 +17,8 @@ struct Elgamal {
 
   std::uint32_t _public_key{0};
 
+  std::uint32_t _ephemeral_key{0};
+
   Elgamal() = delete;
 
   // Generates both public and private key.
@@ -24,8 +26,11 @@ struct Elgamal {
 };
 
 /**
+  @brief Creates a byte array of the message.
+*/
+char *byte_array(std::string &message) noexcept;
+
+/**
   Simple representation of the Elgamal encryption for the user.
 */
 void elgamal_demo();
-
-static void test();

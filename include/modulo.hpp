@@ -6,6 +6,7 @@
 #include <exception>
 #include <iostream>
 #include <random>
+#include <set>
 
 namespace mod {
 /**
@@ -40,7 +41,7 @@ std::uint32_t pollards_rho(std::uint32_t value);
 /**
     @brief Computes and returns the unique prime factors of the argument input.
 */
-std::vector<std::uint32_t> find_prime_factors(std::uint32_t value);
+std::set<std::uint32_t> find_prime_factors(std::uint32_t value);
 
 /**
     @brief Finds smallest primitive root of the prime input.
