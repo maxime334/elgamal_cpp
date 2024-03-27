@@ -216,4 +216,15 @@ std::uint32_t find_primit_root(std::uint32_t prime) {
   // Not found a generator.
   return 0;
 }
+
+std::uint32_t find_mod_inverse(std::uint32_t base, std::uint32_t moduli) {
+  // We can find the inverse modulo easily using Fermat's Little Theorem.
+  // https://cp-algorithms.com/algebra/module-inverse.html
+
+  if (!is_prime(moduli))
+    throw new std::invalid_argument(
+        "The moduli must be a prime to find the inverse modulo.");
+
+  return mod_exp(base, moduli - 2, moduli);
+}
 } // namespace mod

@@ -47,4 +47,9 @@ std::set<std::uint32_t> find_prime_factors(std::uint32_t value);
     @brief Finds smallest primitive root of the prime input.
 */
 std::uint32_t find_primit_root(std::uint32_t prime);
+
+/**
+    @brief Can find the inverse modulo of base, given that moduli is a prime.
+*/
+std::uint32_t find_mod_inverse(std::uint32_t base, std::uint32_t moduli);
 } // namespace mod
