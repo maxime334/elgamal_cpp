@@ -1,3 +1,0 @@
-/home/user/Documents/C++_Workspace/Elgamal/build/CMakeFiles/myapp.dir
-/home/user/Documents/C++_Workspace/Elgamal/build/CMakeFiles/edit_cache.dir
-/home/user/Documents/C++_Workspace/Elgamal/build/CMakeFiles/rebuild_cache.dir
